@@ -48,7 +48,7 @@ summary {
 
 .top {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
 }
     
 .header {
@@ -69,16 +69,19 @@ summary {
         display: flex;
         align-items: center;
         gap: 33px;
+        overflow-x: hidden;
+        position: relative;
     }
         
     &__checkbox {
         position: absolute;
+        left: -999999px;
         visibility: hidden;
-        left: -9999999px;
+        
     }
         
-    &__checkbox:checked ~ .mobile-menu {
-        right: 0;
+    &__checkbox:checked~.mobile-menu {
+        right: 0px;
     }
 }
     
@@ -87,7 +90,7 @@ summary {
     top: 75px;
     right: -$widthMobileMenu;
     z-index: 1;
-    transition: right 0.6s;
+    transition: right 0.5s;
     width: $widthMobileMenu;
     background: #FFFFFF;
     box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
@@ -240,6 +243,8 @@ summary {
     
 .product-box {
     padding-bottom: 96px;
+    display: flex;
+    flex-direction: column;
     
     &__heading {
         font-style: normal;
@@ -289,8 +294,37 @@ summary {
             background-color: #F26376;
         }
     }
+    &__numbers{
+        @include flex();
+    }
+    &__number{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 17px;
+        margin-top: 48px;
+        border: 1px solid #EBEBEB;
+        width: 283px;
+        height: 43px;
+    }
 }
-    
+
+.p-b__content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    // margin: 0;
+    padding: 12px 40px;
+    width: 283px;
+    color: #C4C4C4;
+    font-family: Lato;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
 .product {
     position: relative;
 
@@ -696,6 +730,111 @@ summary {
 
 .margin{
     margin-bottom: 128px;
+}
+
+// Всплывающий блок
+
+.sort {
+    display: flex;
+    gap: 28px;
+    align-items: center;
+    &__details{
+        position: relative;
+    }
+        
+    &__summary{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+        
+    &__content{
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        width: 79px;
+        padding: 7px 9px 11px;
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        z-index: 1;
+        top: 22px;
+        left: -9px;
+    }
+}
+
+.filter {
+    width: 100%;
+    padding: 13px 16px 16px;
+    box-sizing: border-box;
+    position: absolute;
+    z-index: 1;
+    cursor: pointer;
+    &-box {
+        position: relative;
+        height: 40px;
+        width: $width3;
+    }
+        
+    &__link {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 17px;
+        color: #6F6E6E;
+        &:hover {
+            color: $colorSite;
+        }
+    }
+        
+    &__box {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 16px;
+        gap: 11px;
+    }
+        
+    &-sort {
+        padding-top: 39px;
+        display: flex;
+        gap: 30px;
+    }
+        
+    &__summary {
+        display: flex;
+        gap: 11px;
+        align-items: center;
+    }
+        
+    &[open] {
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        & .filter__summary {
+            color: $colorSite;
+        }
+            
+        & .filter__img path {
+            fill: $colorSite;
+        }
+    }
+        
+    &__category {
+        margin-top: 16px;
+        &-summary {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6F6E6E;
+            padding: 8px 11px 11px;
+            border-left: 5px solid $colorSite;
+            border-bottom: 1px solid #EBEBEB;
+        }
+            
+        &[open] .filter__category-summary {
+            color: $colorSite;
+        }
+    }
 }
 
 // Адаптив
