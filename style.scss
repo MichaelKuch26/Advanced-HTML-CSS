@@ -960,7 +960,7 @@ summary {
         width: 360px;
         height: 45px;
         padding-left: 17px;
-        color: #B1B1B1;
+        color: #000;
         font-size: 13px;
         font-style: normal;
         font-weight: 300;
@@ -1006,7 +1006,14 @@ summary {
         font-weight: 400;
         line-height: normal;
         padding: 16px 20px 16px 30px;
-        
+    }
+    &__btn:hover{
+        background-color: #B1B1B1;
+        color: $colorSite;
+        border: 2px solid $colorSite;
+        padding-left: 80px;
+        font-weight: 1000;
+        transition: 0.5s;
     }
     &__btn-img{
         padding-left: 20px;

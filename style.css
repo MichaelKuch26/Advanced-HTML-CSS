@@ -911,7 +911,7 @@ summary::-webkit-details-marker {
   width: 360px;
   height: 45px;
   padding-left: 17px;
-  color: #B1B1B1;
+  color: #000;
   font-size: 13px;
   font-style: normal;
   font-weight: 300;
@@ -957,6 +957,14 @@ summary::-webkit-details-marker {
   font-weight: 400;
   line-height: normal;
   padding: 16px 20px 16px 30px;
+}
+.registration__btn:hover {
+  background-color: #B1B1B1;
+  color: #F16D7F;
+  border: 2px solid #F16D7F;
+  padding-left: 80px;
+  font-weight: 1000;
+  transition: 0.5s;
 }
 .registration__btn-img {
   padding-left: 20px;
