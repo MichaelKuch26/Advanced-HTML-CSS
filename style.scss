@@ -89,7 +89,7 @@ summary {
     position: absolute;
     top: 75px;
     right: -$widthMobileMenu;
-    z-index: 1;
+    z-index: 11;
     transition: right 0.5s;
     width: $widthMobileMenu;
     background: #FFFFFF;
@@ -406,6 +406,7 @@ summary {
     padding-top: 104px;
     padding-bottom: 104px;
     display: flex;
+    align-items: center;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
@@ -681,15 +682,15 @@ summary {
         width: 641px;
     }
     &__sort {
-    display: flex;
-    gap: 28px;
-    align-items: center;
-    color: #6F6E6E;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    padding-bottom: 50px;
+        display: flex;
+        gap: 28px;
+        align-items: center;
+        color: #6F6E6E;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        padding-bottom: 50px;
     &__details {
         position: relative;
     }
@@ -702,26 +703,34 @@ summary {
 }
 
 .button {
-    width: 212px;
-    height: 48px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
     
-    border: 1px solid $colorSite;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: $colorSite;
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    color: $colorSite;
-    @include flex ();
-    gap: 22px;
-    &:hover {
-        color: white;
-        background-color: $colorSite;
+    &__product{
+        text-align: center;
+        padding-top: 15px;
+        padding-bottom: 15px;
+        padding-right: 57px;
+        padding-left: 24px;
+        color: $colorSite;
+        border: 1px solid $colorSite;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 19px;
     }
+    &__product:hover {
+        color: $colorSite;
+        background-color: #6F6E6E;
+        font-weight: 900;
+    }
+    &__basket-img{
+        align-items: center;
+        justify-content: center;
+        padding-right: 23px;
+    }
+
 }
 
 .padding{
@@ -1056,6 +1065,10 @@ ul li::marker {
     content: url(/img/check.svg);
 }
 
+.li-mobile::marker {
+    content: none;
+}
+
 // Всплывающий блок
 
 .sort {
@@ -1173,6 +1186,23 @@ ul li::marker {
         padding-right: 40px;
         }
     }
+    .head {
+        &__heading{
+            padding-left: 16px;
+            }
+    }
+    .basket{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .breadcrumb{
+        padding-right: 16px;
+    }
+
+    .none{
+        display: none;
+    }
+    
     .promo {
         padding-left: calc(50% - 384px);
         padding-right: calc(50% - 384px);
@@ -1200,7 +1230,34 @@ ul li::marker {
         }
         
     }
-
+    .registration{
+        
+        padding-right: 16px;
+        &__left_content {
+            padding-left: 16px;
+        }
+        &__button{
+            padding-left: 16px;
+        }
+        &__right{
+            max-width: 354px;
+            margin-right: 10px;
+        }
+        &__forms{
+            padding-left: 7px;
+        }
+        &__title{
+            font-size: 16px;
+        }
+        &__loyalty-text{
+            width: 354px;
+            margin: 32px auto;
+            font-size: 16px;
+        }
+        &__list-item{
+            font-size: 16px;
+        }
+    }
     .subscribe{
         &__left-content{
             margin-left: 20px;
@@ -1208,6 +1265,7 @@ ul li::marker {
         &__right-content{
             margin-right: 20px;
         }
+        padding-bottom: 140px;
     }
     .footer{
         &__text{
@@ -1217,7 +1275,43 @@ ul li::marker {
             margin-right: 20px;
         }
     }
+    .basket {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__left{
+            max-width: 100%;
+            margin-right: 0;
+        }
+        &__right{
+            max-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 16px;
+        }
+    }
+    .product-bask__close-img {
+        padding-left: 100px;
+    }
+    .product-bask__content{
+        max-width: 488px;
+    }
+
+    .pay{
+        margin-top: 190px;
+        margin-bottom: 130px;
+    }
+    .product-bask {
+        margin-bottom: -50px;
+    }
 }
+
+@media (max-width: 1000px) {
+    
+}
+
 
 @media (max-width: 830px) {
     .center {

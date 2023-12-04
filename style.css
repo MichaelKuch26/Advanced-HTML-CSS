@@ -66,7 +66,7 @@ summary::-webkit-details-marker {
   position: absolute;
   top: 75px;
   right: -232px;
-  z-index: 1;
+  z-index: 11;
   transition: right 0.5s;
   width: 232px;
   background: #FFFFFF;
@@ -350,6 +350,7 @@ summary::-webkit-details-marker {
   padding-top: 104px;
   padding-bottom: 104px;
   display: flex;
+  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
@@ -655,27 +656,32 @@ summary::-webkit-details-marker {
 }
 
 .button {
-  width: 212px;
-  height: 48px;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.button__product {
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 57px;
+  padding-left: 24px;
+  color: #F16D7F;
   border: 1px solid #F16D7F;
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 19px;
-  color: #F16D7F;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 19px;
-  color: #F16D7F;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 22px;
 }
-.button:hover {
-  color: white;
-  background-color: #F16D7F;
+.button__product:hover {
+  color: #F16D7F;
+  background-color: #6F6E6E;
+  font-weight: 900;
+}
+.button__basket-img {
+  align-items: center;
+  justify-content: center;
+  padding-right: 23px;
 }
 
 .padding {
@@ -1005,6 +1011,10 @@ ul li::marker {
   content: url(/img/check.svg);
 }
 
+.li-mobile::marker {
+  content: none;
+}
+
 .sort {
   display: flex;
   gap: 28px;
@@ -1105,6 +1115,19 @@ ul li::marker {
   .header__right {
     padding-right: 40px;
   }
+  .head__heading {
+    padding-left: 16px;
+  }
+  .basket {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .breadcrumb {
+    padding-right: 16px;
+  }
+  .none {
+    display: none;
+  }
   .promo {
     padding-left: calc(50% - 384px);
     padding-right: calc(50% - 384px);
@@ -1130,6 +1153,36 @@ ul li::marker {
   .product-box__content {
     gap: 16px;
   }
+  .registration {
+    padding-right: 16px;
+  }
+  .registration__left_content {
+    padding-left: 16px;
+  }
+  .registration__button {
+    padding-left: 16px;
+  }
+  .registration__right {
+    max-width: 354px;
+    margin-right: 10px;
+  }
+  .registration__forms {
+    padding-left: 7px;
+  }
+  .registration__title {
+    font-size: 16px;
+  }
+  .registration__loyalty-text {
+    width: 354px;
+    margin: 32px auto;
+    font-size: 16px;
+  }
+  .registration__list-item {
+    font-size: 16px;
+  }
+  .subscribe {
+    padding-bottom: 140px;
+  }
   .subscribe__left-content {
     margin-left: 20px;
   }
@@ -1141,6 +1194,36 @@ ul li::marker {
   }
   .footer__icons {
     margin-right: 20px;
+  }
+  .basket {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .basket__left {
+    max-width: 100%;
+    margin-right: 0;
+  }
+  .basket__right {
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+  }
+  .product-bask__close-img {
+    padding-left: 100px;
+  }
+  .product-bask__content {
+    max-width: 488px;
+  }
+  .pay {
+    margin-top: 190px;
+    margin-bottom: 130px;
+  }
+  .product-bask {
+    margin-bottom: -50px;
   }
 }
 @media (max-width: 830px) {
