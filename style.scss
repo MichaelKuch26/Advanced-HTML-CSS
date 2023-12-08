@@ -294,18 +294,35 @@ summary {
             background-color: #F26376;
         }
     }
-    &__numbers{
+    &__pagination{
         @include flex();
     }
-    &__number{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 17px;
-        margin-top: 48px;
+    &__pagination-content{
+        margin-top: 60px;
         border: 1px solid #EBEBEB;
-        width: 283px;
-        height: 43px;
+        padding: 11px 40px;
+    }
+    &__pag-text{
+        color: #C4C4C4;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        padding-right: 5px;
+    }
+    &__active{
+        color: #EF5B70;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: normal;
+        padding-right: 5px;
+    }
+    &__pag-left{
+        padding-right: 17px;
+    }
+    &__pag-right{
+        padding-left: 17px;
     }
 }
 
@@ -1177,7 +1194,9 @@ ul li::marker {
 // Адаптив
 
 @media (max-width: 1170px) {
-
+    .header__checkbox:checked ~ .mobile-menu {
+        right: 17px;
+    }
     .header {
         &__left{
         padding-left: 30px;
@@ -1198,7 +1217,6 @@ ul li::marker {
     .breadcrumb{
         padding-right: 16px;
     }
-
     .none{
         display: none;
     }
@@ -1222,13 +1240,14 @@ ul li::marker {
     .sale {
         margin: 0px 16px;
     }
-
     .product-box{
         margin: 0px 16px;
         &__content{
             gap: 16px;
         }
-        
+    }
+    .filter-sort{
+        margin-right: 16px;
     }
     .registration{
         
@@ -1298,7 +1317,6 @@ ul li::marker {
     .product-bask__content{
         max-width: 488px;
     }
-
     .pay{
         margin-top: 190px;
         margin-bottom: 130px;
@@ -1307,18 +1325,11 @@ ul li::marker {
         margin-bottom: -50px;
     }
 }
-
-@media (max-width: 1000px) {
-    
-}
-
-
 @media (max-width: 830px) {
     .center {
         padding-left: calc(50% - #{$widthSiteTable / 2});
         padding-right: calc(50% - #{$widthSiteTable / 2});
     }
-
     .advantages {
         padding-top: 50px;
         padding-bottom: 65px;
@@ -1332,7 +1343,6 @@ ul li::marker {
     .subscribe {
         flex-direction: column;
         justify-content: space-between;
-
         &__left-content{
             display: flex;
             flex-direction: column;
@@ -1351,7 +1361,90 @@ ul li::marker {
         }
     }
 }
-
+@media (max-width: 754px) {
+    .registration{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &__left{
+            max-width: 100%;
+        }
+        &__left_content {
+            padding-left: 0px;
+        }
+        &__button {
+            padding-left: 0px;
+            margin-bottom: 53px;
+        }
+        &__right{
+            max-width:  375px;
+            margin-right: 0;
+            margin-bottom: 100px;
+        }
+        &__loyalty-text {
+            margin: 32px 0 22px;
+        }
+    }
+}
+@media (max-width: 720px) {
+    .basket{
+        &__right{
+            display: flex;
+            flex-direction: column;
+            margin-top: 106px;
+            max-width: 100%;
+        }
+    }
+}
+.product-bask {
+    max-width: 560px;
+    &__content {
+        padding: 13px 0px 0 17px;
+        margin-left: 8px;
+        margin-right: 8px;
+    }
+    &__cart {
+        font-size: 16px;
+    }
+    &__img{
+        width: 144px;
+        height: 188px;
+    }
+    &__heading{
+        font-size: 16px;
+        padding-bottom: 25px;
+    }
+    &__about{
+        font-size: 14px;
+    }
+    &__color {
+        padding: 4px 0;
+    }
+    &__quantity {
+        padding-top: 4px;
+    }
+    &__quantity-number {
+        width: 26px;
+        font-size: 10px;
+        padding-left: 10px;
+        margin-left: 15px;
+    }
+    &__close-img{
+        width: 10px;
+        
+    }
+    &__button-border{
+        font-size: 12px;
+        font-weight: 400;
+        padding: 10px;
+        margin: 0 8px; 
+    }
+}
+.pay {
+    width: 360px;
+    margin-top: 90px;
+    margin-bottom: 96px;
+}
 @media (max-width: 700px) {
     .sale{
         display: flex;
@@ -1378,7 +1471,6 @@ ul li::marker {
 }
 
 @media (max-width: 590px) {
-
     .header{
         &__right{
         padding-right: 16px;
@@ -1386,6 +1478,18 @@ ul li::marker {
         &__link-site{
         display: none;
         }
+    }
+    .head {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 32px;
+        &__heading{
+            padding-left: 0;
+        }
+    }
+    .product-bask {
+        max-width: 360px;
     }
     .promo__img{
         display: none;
@@ -1398,6 +1502,30 @@ ul li::marker {
         &__info{
             margin-top: 45%;
         }   
+    }
+    .content__text {
+        width: 360px;
+    }
+    .content__sort {
+        font-size: 10px;
+        padding-bottom: 65px;
+    }
+
+    .filter {
+        width: 590px;
+    }
+
+    .filter-close{
+        display: none;
+    }
+
+    .filter__img{
+        width: 37px;
+        height: 25px;
+    }
+
+    .sort__summary{
+        font-size: 12px;
     }
     .subscribe{
         padding-bottom: 110px;
@@ -1415,7 +1543,6 @@ ul li::marker {
         line-height: 153.2%
         }
     }
-    
     .footer{
         display: flex;
         flex-direction: column-reverse;
@@ -1423,5 +1550,4 @@ ul li::marker {
         padding-bottom: 10px;
         gap: 40px;
     }
-    
 }
